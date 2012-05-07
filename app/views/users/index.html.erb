@@ -1,0 +1,61 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th>Sex</th>
+    <th>Birthday</th>
+    <th>High school</th>
+    <th>College</th>
+    <th>Company</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Website</th>
+    <th>Fav music</th>
+    <th>Fav book</th>
+    <th>Fav movie</th>
+    <th>Fav tv</th>
+    <th>Fav game</th>
+    <th>Fav sport</th>
+    <th>Picture</th>
+    <th>Wall</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.last_name %></td>
+    <td><%= user.email %></td>
+    <td><%= user.password %></td>
+    <td><%= user.sex %></td>
+    <td><%= user.birthday %></td>
+    <td><%= user.high_school %></td>
+    <td><%= user.college %></td>
+    <td><%= user.company %></td>
+    <td><%= user.city %></td>
+    <td><%= user.state %></td>
+    <td><%= user.website %></td>
+    <td><%= user.fav_music %></td>
+    <td><%= user.fav_book %></td>
+    <td><%= user.fav_movie %></td>
+    <td><%= user.fav_tv %></td>
+    <td><%= user.fav_game %></td>
+    <td><%= user.fav_sport %></td>
+    <td><%= user.picture %></td>
+    <td><%= user.wall_id %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User', new_user_path %>
